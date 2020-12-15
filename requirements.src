@@ -1,0 +1,47 @@
+# requirements.src
+#
+#    This it the requirements source. It is a simple list of the all
+#    packages (dev and non-dev) that are required to build, test and
+#    run this system.
+#
+#    DO NOT PIN VERSION -  unless there is a known issue in a certain
+#    version of a package (and add a comment if this is the case)
+#
+#    This file is compiled (using pip-compile) to create the
+#    requirements.txt file. That file, which includes actual package
+#    version numbers and hashes for increased security, is used to
+#    create (using pip-sync) the virtual environment in a known good
+#    state.
+#
+#    NOTE: Dev packages are included here (there is no differentiation
+#          between dev and non-dev packages) all packages are built and
+#          included everywhere.
+#
+#    This is the `compile requirements` command - used to create / recreate
+#    the requirements.txt file from this file:
+#       ```
+#       pip-compile --quiet \
+#       --generate-hashes \
+#       --output-file=requirements.txt \
+#       requirements.src
+#       ```
+#
+
+
+# ---- REQUIRED TOOLS ---- #
+# Manual install of pip-tools into environment is required
+# Using Manual installation to prevent   need for --unsafe
+#   and Warning message in reuirements.txt
+# pip-tools: Command line utils (pip-compile and pip-sync) to help manage
+#    virtual environments
+##pip-tools
+
+
+# ---- USED BY THE SYSTEM ---- #
+# Listed alphabetically
+bs4
+jupyterlab
+pymongo
+pymongo[srv]
+requests
+scipy
