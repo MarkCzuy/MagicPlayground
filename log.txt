@@ -87,3 +87,92 @@ Last Scrape:
 Start Date: 16/12/2015
 End Date: 01/01/2016
 Pages Scraped: 1 - 2
+
+Last Scrape:
+Start Date: 01/01/2015
+End Date: 01/01/2016
+Pages Scraped: 1 - 62
+Last Scrape:
+Start Date: 01/01/2014
+End Date: 01/01/2015
+Pages Scraped: 1 - 77
+Last Scrape:
+Start Date: 01/01/2000
+End Date: 01/01/2014
+Pages Scraped: 1 - 227
+Last Scrape:
+Start Date: 01/01/2000
+End Date: 01/01/2014
+Pages Scraped: 227 - 227
+Last Scrape:
+Start Date: 01/01/2000
+End Date: 01/01/2014
+Pages Scraped: 227 - 227
+Last Scrape:
+Start Date: 01/01/2000
+End Date: 01/01/2014
+Pages Scraped: 227 - 229
+Last Scrape:
+Start Date: 12/21/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/21/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2020
+End Date: 01/01/2021
+Pages Scraped: 1 - 1
+Last Scrape:
+Start Date: 12/01/2019
+End Date: 01/01/2020
+Pages Scraped: 1 - 3
+Last Scrape:
+Start Date: 11/01/2019
+End Date: 01/01/2021
+Pages Scraped: 1 - 177
+Last Scrape:
+Start Date: 11/01/2019
+End Date: 01/01/2021
+Pages Scraped: 177 - 177
+Last Scrape:
+Start Date: 11/01/2019
+End Date: 01/01/2021
+Pages Scraped: 177 - 198
+Last Scrape:
+Start Date: 
+End Date: 
+Pages Scraped: 1 - 4
+Last Scrape:
+Start Date: 12/20/2020
+End Date: 12/28/2020
+Pages Scraped: 1 - 15
+Last Scrape:
+Start Date: 20/12/2020
+End Date: 28/12/2020
+Pages Scraped: 1 - 3

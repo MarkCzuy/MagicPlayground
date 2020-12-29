@@ -1,6 +1,7 @@
 import json
 import os
 import time
+from urllib.parse import urlparse, parse_qs
 
 import pymongo
 import requests
@@ -49,25 +50,48 @@ def builddeckentries(rawdeckdata,deckcollection):
     entrieslist = []
     for entry in rawdeckdata:
         column = entry.find_all("td")
-        if column[4].find("img")["src"] == "/graph/bigstar.png":
+        if column[4].find("img") == None:
+            tournement_size = "1"
+        elif column[4].find("img")["src"] == "/graph/bigstar.png":
             tournement_size = "4"
         else:
             tournement_size = str(len(column[4].find_all("img")))
         decklist = getdecklist(column[0].find_all("input")[1]["value"])
+
+        url = column[1].find("a")["href"]
+        format_name = getformat(url)
         deck = {
                 "_id" : int(column[0].find_all("input")[1]["value"]),
-                "url" : column[1].find("a")["href"],
+                "url" : url,
                 "archtype" : column[1].text.strip().encode().decode(encoding = "unicode_escape"),
                 "player" : column[2].text.strip().encode().decode(encoding = "unicode_escape"),
                 "event" : column[3].text.strip().encode().decode(encoding = "unicode_escape"),
                 "tournement_size" : tournement_size,
                 "place" : column[5].text.strip(),
                 "date" : column[6].text.strip(),
-                "deck_list" : decklist
+                "deck_list" : decklist,
+                "format" : format_name
                 }
         deckcollection.update_one(deck, {"$set": deck}, upsert=True)
         time.sleep(.1)
 
+def getformat(url):
+    #parse the URL
+    #Map code to full format name
+    #For missing map - Unknown (<key value>)
+    namemap = {"LE": "Legacy","VI":"Vintage","MO":"Modern","PI":"Pioneer",
+            "HI":"Historic","ST":"Standard","EDH":"Commander","LI":"Limited",
+            "PAU":"Pauper","PEA":"Peasant","BL":"Block","EX":"Extended",
+            "HIGH":"Highlander","CHL":"Canadian Highlander"}
+
+    parsedurl = parse_qs(urlparse(url).query)
+    if "f" in parsedurl:
+        if parsedurl["f"][0] in namemap:
+            return(namemap[parsedurl["f"][0]])
+        else:
+            return("Unknown Format: {0}".format(parsedurl["f"][0]))
+    else:
+        return("Improper URL - " + url)
 
 def getdecklist(deckid):
     response = requests.get("https://www.mtgtop8.com/mtgo?d=%s" % deckid)
