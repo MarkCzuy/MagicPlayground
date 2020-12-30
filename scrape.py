@@ -57,7 +57,7 @@ def builddeckentries(rawdeckdata,deckcollection):
         else:
             tournement_size = str(len(column[4].find_all("img")))
         decklist = getdecklist(column[0].find_all("input")[1]["value"])
-
+        number_of_cards = sum(decklist["maindeck"].values())+sum(decklist["sideboard"].values())
         url = column[1].find("a")["href"]
         format_name = getformat(url)
         deck = {
@@ -70,7 +70,8 @@ def builddeckentries(rawdeckdata,deckcollection):
                 "place" : column[5].text.strip(),
                 "date" : column[6].text.strip(),
                 "deck_list" : decklist,
-                "format" : format_name
+                "format" : format_name,
+                "number_of_cards" : number_of_cards,
                 }
         deckcollection.update_one(deck, {"$set": deck}, upsert=True)
         time.sleep(.1)
